@@ -44,9 +44,9 @@ namespace MyTake
             meanServiceTime = 2.7;                 // Средна продължителност на времето за обслужване в ОУ1 μ1
             meanServiceTimeSecond = 3.0;           // Средна продължителност на времето за обслужване в ОУ2 μ2
             totalCustomers = TOTAL_CUSTOMERS;      // Максимален брой заявки в модела
-            long seed = 2376457;                   // Стойност за инициализация на генератора
+            //long seed = 2376457;                   // Стойност за инициализация на генератора
                                                    
-            stream = new Random((int)seed);          // Инициализация на генератора за случайни числа
+            stream = new Random(/*(int)seed*/);          // Инициализация на генератора за случайни числа
             futureEventList = new List<Event>();     // Инициализация на списъка от предстоящ събития
             customers = new Queue<Event>();          // Инициализация на опашката към ОУ1
             customersSecond = new Queue<Event>();    // Инициализация на опашката към ОУ2
@@ -258,27 +258,27 @@ namespace MyTake
             //Средно време за чакане в опашка 2
             double W2 = Lq2 / meanSecondInterArrivalTime;
 
-            Console.WriteLine("SINGLE SERVER QUEUE SIMULATION - GROCERY STORE CHECKOUT COUNTER ");
-            Console.WriteLine("\tMEAN INTERARRIVAL TIME       " + meanInterArrivalTime);
-            Console.WriteLine("\tMEAN SERVICE TIME            " + meanServiceTime);
-            Console.WriteLine("\tMEAN SERVICE TIME 2           " + meanServiceTimeSecond);
-            Console.WriteLine("\tNUMBER OF CUSTOMERS SERVED   " + totalCustomers);
+            Console.WriteLine("\t\tSINGLE SERVER QUEUE SIMULATION");
+            Console.WriteLine("\tMEAN INTERARRIVAL TIME          " + meanInterArrivalTime + " Time Units");
+            Console.WriteLine("\tMEAN SERVICE TIME               " + meanServiceTime + " Time Units");
+            Console.WriteLine("\tMEAN SERVICE TIME 2             " + meanServiceTimeSecond + " Time Units");
+            Console.WriteLine("\tNUMBER OF CUSTOMERS SERVED      " + totalCustomers);
             Console.WriteLine();
-            Console.WriteLine("\tSERVER UTILIZATION           " + rho);
-            Console.WriteLine("\tSERVER UTILIZATION 2           " + rho2);
-            Console.WriteLine("\tMAXIMUM LINE LENGTH          " + maxQueueLength);
-            Console.WriteLine("\tMAXIMUM LINE LENGTH 2          " + maxQueueLengthSecond);
-            Console.WriteLine("\tAVERAGE RESPONSE TIME        " + avgr + " Time Units");
+            Console.WriteLine("\tSERVER UTILIZATION              " + rho.ToString("0.##")+"%");
+            Console.WriteLine("\tSERVER UTILIZATION 2            " + rho2.ToString("0.##")+"%");
+            Console.WriteLine("\tMAXIMUM LINE LENGTH             " + maxQueueLength);
+            Console.WriteLine("\tMAXIMUM LINE LENGTH 2           " + maxQueueLengthSecond);
+            Console.WriteLine("\tAVERAGE RESPONSE TIME        \t" + avgr.ToString("0.###") + " Time Units");
             Console.WriteLine("\tPROPORTION WHO SPEND FOUR ");
-            Console.WriteLine("\t MINUTES OR MORE IN SYSTEM   " + pc4);
-            Console.WriteLine("\tSIMULATION RUNLENGTH         " + clock + " Time Units");
-            Console.WriteLine("\tNUMBER OF DEPARTURES         " + totalCustomers);
-            Console.WriteLine("\tNUMBER OF REJECTED CUSTOMERS         " + numberOfRejectedCustomers);
-            Console.WriteLine("\tMEAN WAIT TIME IN QUEUE 1        " + W1);
-            Console.WriteLine("\tMEAN QUEUE 1 LENGTH          " + Lq1);
+            Console.WriteLine("\t MINUTES OR MORE IN SYSTEM   \t" + pc4);
+            Console.WriteLine("\tSIMULATION RUNLENGTH         \t" + clock.ToString("0.##") + " Time Units");
+            Console.WriteLine("\tNUMBER OF DEPARTURES         \t" + totalCustomers);
+            Console.WriteLine("\tNUMBER OF REJECTED CUSTOMERS    " + numberOfRejectedCustomers);
+            Console.WriteLine("\tMEAN WAIT TIME IN QUEUE 1       " + W1.ToString("0.####") + " Time Units");
+            Console.WriteLine("\tMEAN QUEUE 1 LENGTH          \t" + Lq1.ToString("0.####") + " Time Units");
     
-            Console.WriteLine("\tMEAN WAIT TIME IN QUEUE 2        " + W2);
-            Console.WriteLine("\tMEAN QUEUE 2 LENGTH       " + Lq2);
+            Console.WriteLine("\tMEAN WAIT TIME IN QUEUE 2       " + W2.ToString("0.####") + " Time Units");
+            Console.WriteLine("\tMEAN QUEUE 2 LENGTH      \t" + Lq2.ToString("0.####") + " Time Units");
         }
     }
 }
